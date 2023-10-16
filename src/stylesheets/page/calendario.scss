@@ -1,0 +1,38 @@
+.calendario {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.dia {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border: 1px solid #000000;
+  text-align: center;
+
+  ul {
+    list-style: none;
+    padding: 0;
+    flex: 1;
+
+    li {
+      margin: 10px 0;
+    }
+  }
+
+  h2 {
+    background-color: #cbe6d4;
+    padding: 5px;
+  }
+
+  @media (min-width: 768px) {
+    width: 14%;
+    &:not(:last-child) {
+      border-right: none;
+    }
+  }
+}
+
+.comidas {
+  flex: 1;
+}
