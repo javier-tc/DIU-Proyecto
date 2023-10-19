@@ -1,35 +1,77 @@
-import React from 'react';
-
-function DiaComidas({ dia, comidas }) {
-  return (
-    <div className="dia">
-      <h2>{dia}</h2>
-      <ul>
-        {Array(3).fill(null).map((_, index) => (
-          <li key={index}>{comidas[index]}</li>
-        ))}
-      </ul>
-    </div>
-  );
-}
+import React, { useState } from 'react';
+import '../css/App.css';
+const diasSemana = ['lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo'];
 
 function App() {
-  const semana = [
-    {comidas: ['Desayuno', 'Almuerzo', 'Cena']},
-    { dia: 'Lunes', comidas: ['', '', ''] },
-    { dia: 'Martes', comidas:  ['', '', ''] },
-    { dia: 'Miércoles', comidas:  ['', '', ''] },
-    { dia: 'Jueves', comidas:  ['', '', ''] },
-    { dia: 'Viernes', comidas:  ['', '', ''] },
-    { dia: 'Sábado', comidas:  ['', '', ''] },
-    { dia: 'Domingo', comidas: ['', '', ''] },
-  ];
+  const [comidasSemana, setComidasSemana] = useState({
+    lunes: { desayuno: [], almuerzo: [], cena: [] },
+    martes: { desayuno: [], almuerzo: [], cena: [] },
+    miércoles: { desayuno: [], almuerzo: [], cena: [] },
+    jueves: { desayuno: [], almuerzo: [], cena: [] },
+    viernes: { desayuno: [], almuerzo: [], cena: [] },
+    sábado: { desayuno: [], almuerzo: [], cena: [] },
+    domingo: { desayuno: [], almuerzo: [], cena: [] },
+  });
+  const [ingredientes, setIngredientes] = useState([]);
+
+  const handleAgregarComida = (dia, tipoComida, comida) => {
+    // Copia el estado actual de comidasSemana
+    const nuevoComidasSemana = { ...comidasSemana };
+    // Agrega la comida al día y tipo de comida especificados
+    nuevoComidasSemana[dia][tipoComida].push(comida);
+    // Actualiza el estado con las comidas agregadas
+    setComidasSemana(nuevoComidasSemana);
+  };
+
+  const obtenerIngredientes = () => {
+    const ingredientesObtenidos = [];
+    for (const dia in comidasSemana) {
+      for (const tipoComida in comidasSemana[dia]) {
+        ingredientesObtenidos.push(...comidasSemana[dia][tipoComida]);
+      }
+    }
+    setIngredientes(ingredientesObtenidos);
+  };
 
   return (
-    <div className="calendario">
-      {semana.map((item, index) => (
-        <DiaComidas key={index} dia={item.dia} comidas={item.comidas} />
-      ))}
+    <div className="container">
+      <div className="dias-container">
+        {diasSemana.map((dia) => (
+          <div key={dia} className="dia">
+            <h2>{dia.charAt(0).toUpperCase() + dia.slice(1)}</h2> {}
+            <div className="comida-container">
+              <h3>Desayuno</h3>
+              <input
+                type="text"
+                placeholder="Agregar comida"
+                onChange={(e) => handleAgregarComida(dia, 'desayuno', e.target.value)}
+              />
+            </div>
+            <div className="comida-container">
+              <h3>Almuerzo</h3>
+              <input
+                type="text"
+                placeholder="Agregar comida"
+                onChange={(e) => handleAgregarComida(dia, 'almuerzo', e.target.value)}
+              />
+            </div>
+            <div className="comida-container">
+              <h3>Cena</h3>
+              <input
+                type="text"
+                placeholder="Agregar comida"
+                onChange={(e) => handleAgregarComida(dia, 'cena', e.target.value)}
+              />
+            </div>
+          </div>
+        ))}
+      </div>
+      <button className="obtener-ingredientes" onClick={obtenerIngredientes}>Obtener ingredientes</button>
+      <ul className="ingredientes-list">
+        {ingredientes.map((ingrediente, index) => (
+          <li key={index}>{ingrediente}</li>
+        ))}
+      </ul>
     </div>
   );
 }

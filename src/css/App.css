@@ -1,0 +1,29 @@
+.container {
+    text-align: center;
+  }
+  
+  .dias-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .dia {
+    background-color: #ffbbaf; 
+    border: 2px solid white;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    text-transform: capitalize;
+    width: 300px; /* Ancho ajustable según tu preferencia */
+  }
+  
+  .button {
+    background-color: #ff6347; 
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 50px; /* Redondeado */
+    cursor: pointer;
+  }
+  
+  

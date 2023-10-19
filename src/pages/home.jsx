@@ -1,27 +1,27 @@
-import React from 'react'
+import React from 'react';
+import { Button } from 'react-bootstrap';
+import NavBar from '../components/nav_bar';
+import App from '../components/app_calendar'
+import LogoUSM from '../assets/usm.png';
 
-import NavBar from '../components/nav_bar'
-import App from '../components/app_calendar.jsx'
-
-export const HomePage = () => {
+const HomePage = () => {
   return (
-    <div className='page'>
-      <h1 className='page__title'>Frontend Sample App</h1>
+    <div className="container">
+      <h1 className="mt-3 text-white">Meal Planner</h1>
       <NavBar />
-      <h2 className='home_title'>Tu Calendario</h2>
+      <h2 className="mt-3 text-white">Tu Calendario</h2>
 
       <div>
-        <h3 className='calendar_title'>Octubre - Semana 3</h3>
+        <h3 className="mt-3 text-white">Octubre - Semana 3</h3>
         <App />
       </div>
 
       <div>
-        <h3 className='calendar_title'>Octubre - Semana 4</h3>
+        <h3 className="mt-3 text-white">Octubre - Semana 4</h3>
         <App />
       </div>
-      
     </div>
-  )
-}
+  );
+};
 
-export default HomePage
+export default HomePage;
