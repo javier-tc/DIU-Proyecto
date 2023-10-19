@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import '../css/App.css';
 const diasSemana = ['lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo'];
 
 function App() {
@@ -41,7 +40,7 @@ function App() {
             <h2>{dia.charAt(0).toUpperCase() + dia.slice(1)}</h2> {}
             <div className="comida-container">
               <h3>Desayuno</h3>
-              <input
+              <input className='input-comida'
                 type="text"
                 placeholder="Agregar comida"
                 onChange={(e) => handleAgregarComida(dia, 'desayuno', e.target.value)}
@@ -49,7 +48,7 @@ function App() {
             </div>
             <div className="comida-container">
               <h3>Almuerzo</h3>
-              <input
+              <input className='input-comida'
                 type="text"
                 placeholder="Agregar comida"
                 onChange={(e) => handleAgregarComida(dia, 'almuerzo', e.target.value)}
@@ -57,7 +56,7 @@ function App() {
             </div>
             <div className="comida-container">
               <h3>Cena</h3>
-              <input
+              <input className='input-comida'
                 type="text"
                 placeholder="Agregar comida"
                 onChange={(e) => handleAgregarComida(dia, 'cena', e.target.value)}
