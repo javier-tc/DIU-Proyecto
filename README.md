@@ -14,6 +14,9 @@ Install dependences
 ```
 npm install
 ```
+```
+npm install bootstrap
+```
 
 Launch environment
 
