@@ -37,9 +37,9 @@ function App() {
       <div className="dias-container">
         {diasSemana.map((dia) => (
           <div key={dia} className="dia">
-            <h2>{dia.charAt(0).toUpperCase() + dia.slice(1)}</h2> {}
+            <h2 className='texto-dia'>{dia.charAt(0).toUpperCase() + dia.slice(1)}</h2> {}
             <div className="comida-container">
-              <h3>Desayuno</h3>
+              <h3 className='texto-comida'>Desayuno</h3>
               <input className='input-comida'
                 type="text"
                 placeholder="Agregar comida"
@@ -47,7 +47,7 @@ function App() {
               />
             </div>
             <div className="comida-container">
-              <h3>Almuerzo</h3>
+              <h3 className='texto-comida'>Almuerzo</h3>
               <input className='input-comida'
                 type="text"
                 placeholder="Agregar comida"
@@ -55,7 +55,7 @@ function App() {
               />
             </div>
             <div className="comida-container">
-              <h3>Cena</h3>
+              <h3 className='texto-comida'>Cena</h3>
               <input className='input-comida'
                 type="text"
                 placeholder="Agregar comida"

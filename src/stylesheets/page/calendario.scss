@@ -5,12 +5,12 @@
 
 .dia {
   background-color: #ffbbaf; 
-    border: 2px solid white;
-    border-radius: 10px;
-    padding: 20px;
-    margin: 10px;
-    text-transform: capitalize;
-    width: 100%; /* Ancho ajustable según tu preferencia */
+  border: 2px solid white;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 2px;
+  text-transform: capitalize;
+  width: 100%; /* Ancho ajustable según tu preferencia */
 
   ul {
     list-style: none;
@@ -22,10 +22,14 @@
     }
   }
 
-  h2 {
-    background-color: #cbe6d4;
+  .texto-dia {
+    background-color: #ffffff;
     padding: 5px;
     width: 100%;
+    border-radius: 50px;
+    border: 3px solid #ff4747;
+    font-size: 30px;
+
   }
 
   @media (min-width: 768px) {
@@ -41,9 +45,20 @@
 }
 
 .input-comida {
-  width: 100%;
+  width: 94%;
 }
 
+.comida-container {
+  background-color: #ffffff;
+  border-radius: 10px;
+  border: 2px solid #ff4747;
+  padding-bottom: 5px;
+  margin: 5px;
+}
+
+.texto-comida {
+  font-size: 20px;
+}
 .container {
   text-align: center;
 }
