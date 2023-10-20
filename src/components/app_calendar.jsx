@@ -70,6 +70,7 @@ function App() {
         {ingredientes.map((ingrediente, index) => (
           <li key={index}>{ingrediente}</li>
         ))}
+        <a href="../presupuesto">Obtener Presupuesto</a>
       </ul>
     </div>
   );
