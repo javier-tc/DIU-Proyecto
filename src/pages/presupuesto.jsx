@@ -1,7 +1,6 @@
 import { useState } from "react";
 import React from "react";
 import { toppings } from "../components/toppings";
-import "../css/Presupuesto.css";
 import NavBar from "../components/nav_bar";
 
 const getFormattedPrice = (price) => `$${price.toFixed(2)}`;
