@@ -7,10 +7,10 @@
   background-color: #ffbbaf; 
   border: 2px solid white;
   border-radius: 10px;
-  padding: 10px;
+  padding: 2px;
   margin: 2px;
   text-transform: capitalize;
-  width: 100%; /* Ancho ajustable según tu preferencia */
+  width: 100%; 
 
   ul {
     list-style: none;
@@ -73,6 +73,29 @@
   color: white;
   border: none;
   padding: 10px 20px;
-  border-radius: 50px; /* Redondeado */
+  border-radius: 50px; 
   cursor: pointer;
+}
+.obtener-ingredientes {
+  background-color: #ff6347;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.ingredientes-list {
+  list-style: none;
+  padding: 0;
+}
+
+.ingredientes-list li {
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.ingredientes-list input {
+  margin-right: 10px;
 }
