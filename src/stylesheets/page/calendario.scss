@@ -46,6 +46,7 @@
 
 .input-comida {
   width: 94%;
+  font-size: 11px;
 }
 
 .comida-container {
@@ -59,10 +60,11 @@
 .texto-comida {
   font-size: 20px;
 }
-.container {
+.semana-container {
   text-align: center;
+  
 }
-
+// 
 .dias-container {
   display: flex;
   justify-content: space-between;
@@ -74,14 +76,6 @@
   border: none;
   padding: 10px 20px;
   border-radius: 50px; 
-  cursor: pointer;
-}
-.obtener-ingredientes {
-  background-color: #ff6347;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 50px;
   cursor: pointer;
 }
 
@@ -98,4 +92,13 @@
 
 .ingredientes-list input {
   margin-right: 10px;
+}
+
+.obtener-presupuesto {
+  background-color: #1a9e53bf;
+  color: white;
+  border-radius: 50px;
+  border: none;
+  margin-top: 3px;
+  padding: 10px 20px;
 }

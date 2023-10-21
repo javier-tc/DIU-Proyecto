@@ -127,6 +127,10 @@ function App() {
         });
       }
     }
+    //alerta en caso de que no seleccione comidas
+    if (ingredientesObtenidos.length == 0){
+      window.alert('No hay comidas seleccionadas. Selecciona una comida para obtener sus ingredientes.')
+    }
     setIngredientesSeleccionados(ingredientesObtenidos.reduce((acc, ingrediente) => {
       acc[ingrediente] = true;
       return acc;
@@ -136,7 +140,7 @@ function App() {
   const ingredientes = Object.keys(ingredientesSeleccionados);
 
   return (
-    <div className="container">
+    <div className="semana-container">
       <div className="dias-container">
         {diasSemana.map((dia) => (
           <div key={dia} className="dia">
@@ -176,7 +180,9 @@ function App() {
             </label>
           </li>
         ))}
-        <a href="../presupuesto">Obtener Presupuesto</a>
+        <a href="../presupuesto">
+          <button type= 'button' className='obtener-presupuesto'>Obtener Presupuesto</button>
+        </a>
       </ul>
     </div>
   );
