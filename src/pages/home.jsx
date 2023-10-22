@@ -4,7 +4,7 @@ import App from '../components/app_calendar'
 
 const HomePage = () => {
   return (
-    <div className="container">
+    <div className="home-container">
       <NavBar />
       <h1 className="calendar-title">Tu Calendario</h1>
 

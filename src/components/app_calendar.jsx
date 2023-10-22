@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const diasSemana = ['lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo'];
 
@@ -90,6 +90,73 @@ const ingredientesPorComida = {
   'Pizza vegetariana': ['Masa de pizza', 'Salsa de tomate', 'Queso', 'Pimientos', 'Champiñones'],
 };
 
+const preciosDeIngredientes = {
+  "Pan tostado": 1000,
+  "Mermelada": 1500,
+  "Mantequilla": 2000,
+  "Cereal": 1200,
+  "Leche": 900,
+  "Frutas": 2500,
+  "Yogur": 1000,
+  "Miel": 1500,
+  "Panqueques": 1000,
+  "Huevos": 1000,
+  "Jamón": 1500,
+  "Queso": 1500,
+  "Tomate": 1000,
+  "Proteína en polvo": 1500,
+  "Plátano": 1000,
+  "Waffles": 1000,
+  "Canela": 1000,
+  "Avena": 1200,
+  "Nueces": 2000,
+  "Sopa de fideos": 1500,
+  "Caldo": 1000,
+  "Zanahorias": 1000,
+  "Cebolla": 1000,
+  "Apio": 1000,
+  "Manzanas": 1200,
+  "Azúcar": 1000,
+  "Canela": 1000,
+  "Masa para pastel": 1500,
+  "Tortillas": 1000,
+  "Aguacate": 1200,
+  "Limón": 1000,
+  "Crepe": 1000,
+  "Chocolate": 1500,
+  "Fresas": 1200,
+  "Harina": 1000,
+  "Carne molida": 1500,
+  "Salsa de tomate": 1000,
+  "Salsa Alfredo": 1500,
+  "Parmesano": 1500,
+  "Chuletas de cerdo": 1500,
+  "Arroz": 1000,
+  "Judías verdes": 1200,
+  "Pollo": 1000,
+  "Huevo": 1000,
+  "Vegetales": 1200,
+  "Filete de pescado": 1500,
+  "Tortillas de maíz": 1000,
+  "Col repollo": 1000,
+  "Salsa de crema": 1200,
+  "Pan de hamburguesa": 1000,
+  "Lechuga": 1000,
+  "Aderezo": 1200,
+  "Eneldo": 1000,
+  "Salmón": 1000,
+  "Caldo de pollo": 1000,
+  "Crema": 1200,
+  "Curry en polvo": 1000,
+  "Leche de coco": 1500,
+  "Pizza de pepperoni": 1000,
+  "Pimientos": 1000,
+  "Champiñones": 1200,
+  "Pepino":1000,
+  "Aceitunas": 1500,
+  "Pan":1000
+};
+
 function App() {
   const [comidasSemana, setComidasSemana] = useState({
     lunes: { desayuno: [], almuerzo: [], cena: [] },
@@ -102,6 +169,8 @@ function App() {
   });
 
   const [ingredientesSeleccionados, setIngredientesSeleccionados] = useState({});
+  const [presupuesto, setPresupuesto] = useState(0);
+  const [mostrarPrecios, setMostrarPrecios] = useState(false);
 
   const handleAgregarComida = (dia, tipoComida, comida) => {
     const nuevoComidasSemana = { ...comidasSemana };
@@ -127,9 +196,10 @@ function App() {
         });
       }
     }
+    console.log(ingredientesObtenidos);
     //alerta en caso de que no seleccione comidas
     if (ingredientesObtenidos.length == 0){
-      window.alert('No hay comidas seleccionadas. Selecciona una comida para obtener sus ingredientes.')
+      window.alert('No hay comidas seleccionadas para esta semana. Selecciona una comida para obtener sus ingredientes.');
     }
     setIngredientesSeleccionados(ingredientesObtenidos.reduce((acc, ingrediente) => {
       acc[ingrediente] = true;
@@ -138,6 +208,23 @@ function App() {
   };
 
   const ingredientes = Object.keys(ingredientesSeleccionados);
+
+
+  useEffect(() => {
+    // Función para calcular el presupuesto en función de los ingredientes seleccionados
+    calcularPresupuesto();
+  }, [ingredientesSeleccionados]);
+
+  const calcularPresupuesto = () => {
+    let totalPresupuesto = 0;
+    for (const ingrediente in ingredientesSeleccionados) {
+      if (ingredientesSeleccionados[ingrediente]) {
+        totalPresupuesto += preciosDeIngredientes[ingrediente] || 0;
+      }
+    }
+    setPresupuesto(totalPresupuesto);
+    setMostrarPrecios(true);
+  };
 
   return (
     <div className="semana-container">
@@ -180,10 +267,26 @@ function App() {
             </label>
           </li>
         ))}
-        <a href="../presupuesto">
-          <button type= 'button' className='obtener-presupuesto'>Obtener Presupuesto</button>
-        </a>
       </ul>
+      <button
+        type="button"
+        className='obtener-presupuesto'
+        onClick={() => setMostrarPrecios(!mostrarPrecios)}
+      >
+        {mostrarPrecios ? 'Ocultar Precios' : 'Mostrar Precios'}
+      </button>
+      {mostrarPrecios && (
+        <ul className="precios-list">
+          {Object.keys(ingredientesSeleccionados).map((ingrediente, index) => (
+            ingredientesSeleccionados[ingrediente] && (
+              <li key={index}>
+                {ingrediente}: ${preciosDeIngredientes[ingrediente] || 0}
+              </li>
+            )
+          ))}
+          <p>Presupuesto Total: ${presupuesto}</p>
+        </ul>
+      )}
     </div>
   );
 }

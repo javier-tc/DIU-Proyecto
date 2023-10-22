@@ -5,10 +5,10 @@
 
 .dia {
   background-color: #ffbbaf; 
-  border: 2px solid white;
+  border: 2px solid rgb(255, 255, 255);
   border-radius: 10px;
   padding: 2px;
-  margin: 2px;
+  margin: 3px;
   text-transform: capitalize;
   width: 100%; 
 
@@ -26,7 +26,7 @@
     background-color: #ffffff;
     padding: 5px;
     width: 100%;
-    border-radius: 50px;
+    border-radius: 10px;
     border: 3px solid #ff4747;
     font-size: 30px;
 
@@ -73,6 +73,11 @@
   padding: 10px 20px;
   border-radius: 50px; 
   cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.obtener-ingredientes:hover{
+  background-color: #ff6347be
 }
 
 .ingredientes-list {
@@ -97,4 +102,10 @@
   border: none;
   margin-top: 3px;
   padding: 10px 20px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+}
+
+.obtener-presupuesto:hover {
+  background-color: #1a9e5388;
 }
