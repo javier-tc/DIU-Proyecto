@@ -16,14 +16,13 @@ h3 {
     margin-top: 1rem;
 }
   
-.toppings-list,
-.total {
+.toppings-list{
     width: 30%;
     margin: 0 auto;
 }
   
 .toppings-list {
-    list-style: none;
+    list-style: square;
     padding: 0;
 }
   
@@ -48,12 +47,13 @@ h3 {
 }
   
 .total {
-    margin-top: 1rem;
-}
-  
-@media screen and (max-width: 600px) {
-    .toppings-list,
-    .total {
-      width: 90%;
-    }
-}
+    margin: 8px;
+    font-size: 20px; /* Tamaño grande del texto */
+    font-weight: bold; /* Fuente en negrita */
+    background-color: #33ff6d76; /* Color de fondo llamativo (puedes cambiarlo) */
+    color: #000000; /* Color de texto en contraste */
+    padding: 5px; /* Agrega relleno para resaltar más */
+    border: 1px solid #afafaf; /* Borde destacado */
+    text-align: center;
+    display: inline-block;
+  }

@@ -273,9 +273,9 @@ function App() {
       <button className="obtener-ingredientes" onClick={obtenerIngredientes}>
         Obtener ingredientes
       </button>
-      <ul className="ingredientes-list">
+      <ul>
         {ingredientes.map((ingrediente, index) => (
-          <li key={index}>
+          <li className="ingredientes-list" key={index}>
             <label>
               <input
                 type="checkbox"
@@ -303,7 +303,7 @@ function App() {
               </li>
             )
           ))}
-          <p>Presupuesto Total: ${presupuesto}</p>
+          <p className='total'>Presupuesto Total: ${presupuesto}</p>
         </ul>
       )}
     </div>

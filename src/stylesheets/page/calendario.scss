@@ -74,6 +74,7 @@
   border-radius: 50px; 
   cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease;
+  width: 200px;
 }
 
 .obtener-ingredientes:hover{
@@ -82,7 +83,9 @@
 
 .ingredientes-list {
   list-style: none;
-  padding: 0;
+  padding: 2px;
+  justify-content: flex-start;
+  width: 200px;
 }
 
 .ingredientes-list li {
@@ -104,8 +107,32 @@
   padding: 10px 20px;
   transition: background-color 0.3s ease, color 0.3s ease;
   cursor: pointer;
+  width: 200px;
 }
 
 .obtener-presupuesto:hover {
   background-color: #1a9e5388;
+}
+
+.precios-list {
+  display: flex;
+  flex-wrap: wrap; /* Permite que los elementos se desplieguen en varias filas si es necesario */
+  justify-content: flex-start; /* Alinea los elementos hacia la izquierda (horizontalmente) */
+  font-weight: bold;
+}
+
+ul {
+  list-style: none; /* Elimina los puntos o números de la lista */
+  padding: 0; /* Elimina el relleno predeterminado de la lista */
+  text-align: center; /* Centra el texto en la lista */
+}
+
+li {
+  flex: 0 0 calc(33.33% - 10px); /* Hace que los elementos ocupen el 33.33% del ancho del contenedor (con margen) */
+  display: inline-block; /* Hace que los elementos de la lista sean elementos en línea */
+  margin: 5px; /* Agrega margen entre los elementos */
+  padding: 10px 10px; /* Agrega relleno para hacer que los elementos sean más grandes */
+  border: 1px solid #333; /* Agrega un borde con color #333 (puedes cambiarlo) */
+  border-radius: 5px; /* Agrega un borde redondeado */
+  width: 100px
 }
