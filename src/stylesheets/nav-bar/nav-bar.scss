@@ -1,0 +1,32 @@
+.navbar-container {
+  position:absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgb(19, 6, 25); /* Rojo oscuro */
+  z-index: 1000; /* Asegura que esté por encima de otros elementos */
+  display: flex;
+  justify-content: space-between; /* Distribuir elementos a los lados */
+  align-items: center; /* Centrar verticalmente los elementos */
+  padding: 10px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+}
+
+.navbar-link {
+  text-decoration: none;
+  font-size: 26px;
+  color: #e74c3c; /* Texto blanco */
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-right: 40px;
+}
+
+.navbar-link:hover {
+  background-color: #c0392b; /* Rojo más oscuro al pasar el ratón */
+  color:#190806;
+}

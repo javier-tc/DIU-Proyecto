@@ -1,138 +1,153 @@
 .semana-container {
-  flex-wrap: wrap;
-  text-align: center;
+	flex-wrap: wrap;
+	text-align: center;
 }
 
 .dia {
-  background-color: #ffbbaf; 
-  border: 2px solid rgb(255, 255, 255);
-  border-radius: 10px;
-  padding: 2px;
-  margin: 3px;
-  text-transform: capitalize;
-  width: 100%; 
+	background-color: #e74c3c;
+	border-radius: 10px;
+	padding: 2px;
+	margin: 3px;
+	text-transform: capitalize;
+	width: 100%;
 
-  ul {
-    list-style: none;
-    padding: 0;
-    flex: 1;
+	ul {
+		list-style: none;
+		padding: 0;
+		flex: 1;
 
-    li {
-      margin: 10px 0;
-    }
-  }
+		li {
+			margin: 10px 0;
+		}
+	}
 
-  .texto-dia {
-    background-color: #ffffff;
-    padding: 5px;
-    width: 100%;
-    border-radius: 10px;
-    border: 3px solid #ff4747;
-    font-size: 30px;
+	.texto-dia {
+		background-color: #ffffff;
+		padding: 5px;
+		width: 100%;
+		border-radius: 10px;
+		border: 3px solid rgb(19, 6, 25);
+		font-size: 30px;
+		font-weight: bold;
 
-  }
+	}
 
-  @media (min-width: 768px) {
-    width: 14%;
-    &:not(:last-child) {
-      border-right: none;
-    }
-  }
 }
 
 .comidas {
-  flex: 1;
+	flex: 1;
 }
 
 .input-comida {
-  width: 94%;
-  font-size: 11px;
+	width: 94%;
+	font-size: 10px;
+	text-overflow: ellipsis;
 }
 
 .comida-container {
-  background-color: #ffffff;
-  border-radius: 10px;
-  border: 2px solid #ff4747;
-  padding-bottom: 5px;
-  margin: 5px;
+	background-color: #ffffff;
+	border-radius: 10px;
+	padding-bottom: 5px;
+	margin: 5px;
 }
 
 .texto-comida {
-  font-size: 20px;
+	font-size: 20px;
 }
+
 // 
 .dias-container {
-  display: flex;
-  justify-content: space-between;
+	display: flex;
+	justify-content: space-between;
 }
 
-.obtener-ingredientes {
-  background-color: #ff6347; 
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 50px; 
-  cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  width: 200px;
+.ingredientes-ul {
+	display: flex;
+	flex-direction: column;
+	border: 0px solid #ff6347;
+	margin: 10px;
+	padding: 4px;
+	min-width: 0px;
+	min-height: 0px;
+	max-height: 300px;
+	overflow-y: auto;
 }
-
-.obtener-ingredientes:hover{
-  background-color: #ff6347be
-}
-
 .ingredientes-list {
-  list-style: none;
-  padding: 2px;
-  justify-content: flex-start;
-  width: 200px;
+	list-style: none;
+	width: 200px;
 }
-
 .ingredientes-list li {
-  margin-bottom: 0.5rem;
-  display: flex;
-  align-items: center;
+	align-items: center;
+	flex: 0 0 calc(33.33% - 10px);
+	width: 100px
 }
 
 .ingredientes-list input {
-  margin-right: 10px;
+	margin-right: 10px;
 }
 
 .obtener-presupuesto {
-  background-color: #1a9e53bf;
-  color: white;
-  border-radius: 50px;
-  border: none;
-  margin-top: 3px;
-  padding: 10px 20px;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  cursor: pointer;
-  width: 200px;
+	background-color: rgb(19, 6, 25);
+	border: 2px solid #ff6347;
+	color: white;
+	padding: 8px;
+	border-radius: 50px;
+	position: fixed;
+	bottom: 260px;  /* Puedes ajustar esto según tu diseño */
+	right: 6px;   /* Puedes ajustar esto según tu diseño */
+	margin: 2px;
+	cursor: pointer;
+	transition: background-color 0.3s ease, color 0.3s ease;
+	width: 180px; /* Ajusta el ancho según tus necesidades */
+	max-height: 50px;
 }
 
 .obtener-presupuesto:hover {
-  background-color: #1a9e5388;
+	background-color: rgb(47, 14, 62);
 }
 
-.precios-list {
-  display: flex;
-  flex-wrap: wrap; /* Permite que los elementos se desplieguen en varias filas si es necesario */
-  justify-content: flex-start; /* Alinea los elementos hacia la izquierda (horizontalmente) */
-  font-weight: bold;
+.precios-ul {
+	display: flex;
+	text-align: right;
+	flex-direction: column;
+	border: 0px solid rgb(19, 6, 25);
+	border-radius: 10px;
+	position: fixed;
+	padding: 2px;
+	bottom: 290px;  /* Puedes ajustar esto según tu diseño */
+	right: 0px;   /* Puedes ajustar esto según tu diseño */
+	overflow-y: auto;
+	min-height: 40px;
+	max-height: 200px;
+	width: 200px;
+	z-index: 1;
 }
 
 ul {
-  list-style: none; /* Elimina los puntos o números de la lista */
-  padding: 0; /* Elimina el relleno predeterminado de la lista */
-  text-align: center; /* Centra el texto en la lista */
+	list-style: none;
+	padding: 0;
+	text-align: left;
 }
 
-li {
-  flex: 0 0 calc(33.33% - 10px); /* Hace que los elementos ocupen el 33.33% del ancho del contenedor (con margen) */
-  display: inline-block; /* Hace que los elementos de la lista sean elementos en línea */
-  margin: 5px; /* Agrega margen entre los elementos */
-  padding: 10px 10px; /* Agrega relleno para hacer que los elementos sean más grandes */
-  border: 1px solid #333; /* Agrega un borde con color #333 (puedes cambiarlo) */
-  border-radius: 5px; /* Agrega un borde redondeado */
-  width: 100px
+.total {
+	margin: 0px;
+	font-size: 14px;
+	background-color: rgb(19, 6, 25);
+	color: white;
+	padding: 10px;
+	border: 1px solid #afafaf;
+	border-radius: 10px;
+	text-align: center;
+	display: block;
+}
+
+.main-footer {
+	background-color: rgb(19, 6, 25);
+	color: #e74c3c;
+	text-align: center;
+	position: relative;
+	left: 0;
+	bottom: -130px;
+	width: 100%;
+	padding: 10px;
 }
