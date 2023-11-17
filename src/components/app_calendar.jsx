@@ -292,7 +292,7 @@ function App() {
 					</div>
 				))}
 			</div>
-			<p>Lista de ingredientes:</p>
+			<p className='ingredientes-p'>Lista de ingredientes:</p>
 			<ul className='ingredientes-ul'>
 				{ingredientes.map((ingrediente, index) => (
 					<li className="ingredientes-list" key={index}>

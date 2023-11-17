@@ -69,6 +69,7 @@
 	padding: 4px;
 	min-width: 0px;
 	min-height: 0px;
+  margin-left: 400px;
 	max-height: 300px;
 	overflow-y: auto;
 }
@@ -110,7 +111,7 @@
 	display: flex;
 	text-align: right;
 	flex-direction: column;
-	border: 0px solid rgb(19, 6, 25);
+	border: 1px solid rgb(19, 6, 25);
 	border-radius: 10px;
 	position: fixed;
 	padding: 2px;
@@ -119,10 +120,15 @@
 	overflow-y: auto;
 	min-height: 40px;
 	max-height: 200px;
-	width: 200px;
+	width: 250px;
 	z-index: 1;
 }
 
+.precios-li {
+  color:#000;
+  text-align: left;
+  margin-left: 15px;
+}
 ul {
 	list-style: none;
 	padding: 0;
@@ -147,7 +153,13 @@ ul {
 	text-align: center;
 	position: relative;
 	left: 0;
-	bottom: -130px;
+	bottom: -340px;
 	width: 100%;
 	padding: 10px;
+}
+
+.ingredientes-p {
+  font-weight: bold;
+  font-size: 30px;
+  text-align: center;
 }

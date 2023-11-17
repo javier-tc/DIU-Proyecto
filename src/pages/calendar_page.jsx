@@ -53,7 +53,7 @@ const CalendarPage = () => {
 				</div>
 			</div>
 			<footer className="main-footer">
-				<p>&copy; 2023 Tu App de Planificación de Comidas</p>
+				<p>&copy; 2023 Meal Planner</p>
 			</footer>
 		</div>
 	);
